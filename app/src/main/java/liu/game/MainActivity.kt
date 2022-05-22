@@ -6,8 +6,13 @@ import android.os.Bundle
 import android.view.View
 import android.view.View.INVISIBLE
 import android.view.View.VISIBLE
+import android.widget.ImageView
+import com.bumptech.glide.annotation.GlideModule
+import com.bumptech.glide.module.AppGlideModule
 import kotlinx.coroutines.*
 import liu.game.databinding.ActivityMainBinding
+@GlideModule
+public final class MyAppGlideModule : AppGlideModule()
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -19,6 +24,13 @@ class MainActivity : AppCompatActivity() {
         //setContentView(R.layout.activity_main)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val img: ImageView = findViewById(R.id.img)
+        GlideApp.with(this)
+            .load(R.drawable.me)
+            .circleCrop()
+            .override(800, 600)
+            .into(img)
 
         binding.start.isEnabled = true
         binding.stop.isEnabled = false
