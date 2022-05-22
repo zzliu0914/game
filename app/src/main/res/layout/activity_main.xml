@@ -9,7 +9,9 @@
     <liu.game.MySurfaceView
         android:id="@+id/mysv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
 
     <TextView
         android:id="@+id/txv"
@@ -20,9 +22,44 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintHorizontal_bias="0.033"
         app:layout_constraintStart_toStartOf="@+id/mysv"
         app:layout_constraintTop_toTopOf="@+id/mysv"
         app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/start"
+        android:layout_width="97dp"
+        android:layout_height="44dp"
+        android:layout_marginBottom="10dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/mysv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/start" />
+
+    <ImageView
+        android:id="@+id/stop"
+        android:layout_width="63dp"
+        android:layout_height="47dp"
+        android:layout_marginBottom="10dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/stop" />
+
+    <ImageView
+        android:id="@+id/resume"
+        android:layout_width="206dp"
+        android:layout_height="148dp"
+        android:layout_marginBottom="156dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/mysv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/resume" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
