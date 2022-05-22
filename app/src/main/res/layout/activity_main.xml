@@ -15,18 +15,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/txv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="射擊遊戲(作者：劉姿瑩)"
-        android:textColor="#FF8400"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.111"
-        app:layout_constraintStart_toStartOf="@+id/mysv"
-        app:layout_constraintTop_toTopOf="@+id/mysv" />
-
     <ImageView
         android:id="@+id/start"
         android:layout_width="120dp"

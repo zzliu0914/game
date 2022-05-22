@@ -3,6 +3,7 @@ package liu.game
 import android.graphics.Canvas
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.SyncStateContract.Helpers.update
 import android.view.View
 import android.view.View.INVISIBLE
 import android.view.View.VISIBLE
@@ -17,6 +18,7 @@ public final class MyAppGlideModule : AppGlideModule()
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     lateinit var job: Job
+    lateinit var mysv : MySurfaceView
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -44,6 +46,7 @@ class MainActivity : AppCompatActivity() {
                         binding.stop.isEnabled = true
                         binding.stop.visibility = VISIBLE
                         delay(25)
+                        binding.mysv.fly.update()
                         val canvas: Canvas = binding.mysv.holder.lockCanvas()
                         binding.mysv.drawSomething(canvas)
                         binding.mysv.holder.unlockCanvasAndPost(canvas)
@@ -69,6 +72,7 @@ class MainActivity : AppCompatActivity() {
                         binding.resume.visibility=INVISIBLE
                         binding.stop.isEnabled = true
                         delay(25)
+                        binding.mysv.fly.update()
                         val canvas: Canvas = binding.mysv.holder.lockCanvas()
                         binding.mysv.drawSomething(canvas)
                         binding.mysv.holder.unlockCanvasAndPost(canvas)
