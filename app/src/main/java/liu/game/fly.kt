@@ -16,6 +16,7 @@ class Fly(context: Context) {
     var SrcRect: Rect
     lateinit var DestRect: Rect
     var count: Int = 1
+    var shoot: Int = 0
 
     init {
         image = BitmapFactory.decodeResource(res, R.drawable.fly1)
@@ -26,18 +27,33 @@ class Fly(context: Context) {
     }
 
     fun draw(canvas: Canvas) {
-        DestRect = Rect(x, y, x + w, y + h)
+        DestRect = Rect(x, y, w, y + h)
         canvas.drawBitmap(image, SrcRect, DestRect, null)
     }
 
     fun update(){
-        if (count==1){
-            count = 2
-            image = BitmapFactory.decodeResource(res, R.drawable.fly2)
+        if(shoot==0){
+            if (count==1){
+                count = 2
+                image = BitmapFactory.decodeResource(res, R.drawable.fly2)
+            }
+            else{
+                count = 1
+                image = BitmapFactory.decodeResource(res, R.drawable.fly1)
+            }
         }
         else{
-            count = 1
-            image = BitmapFactory.decodeResource(res, R.drawable.fly1)
+            when (shoot) {
+                1 -> image = BitmapFactory.decodeResource(res, R.drawable.shoot1)
+                2 -> image = BitmapFactory.decodeResource(res, R.drawable.shoot2)
+                3 -> image = BitmapFactory.decodeResource(res, R.drawable.shoot3)
+                4 -> image = BitmapFactory.decodeResource(res, R.drawable.shoot4)
+                5 -> image = BitmapFactory.decodeResource(res, R.drawable.shoot5)
+            }
+            shoot++
+            if (shoot>5){
+                shoot=0
+            }
         }
     }
 }
